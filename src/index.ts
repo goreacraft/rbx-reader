@@ -24,7 +24,8 @@ export function parseBuffer(buffer: ArrayBuffer): Result {
 }
 
 export function readFile(file: PathOrFileDescriptor) {
-    return parseBuffer(readFileSync(file))
+    const buffer = readFileSync(file)
+    return parseBuffer(buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.length))
 }
 
 export function parseAttributes(attributesSerializeBuf: ArrayBufferLike) {
