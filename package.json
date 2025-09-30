@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-wasm",
-    "copy-wasm": "xcopy .\\src\\attributes-parser\\* dist\\attributes-parser\\ /e /h /y"
+    "copy-wasm": "xcopy .\\src\\attributes-parser\\* dist\\attributes-parser\\ /e /h /y",
+    "prepare": "npm run build"
   }
 }
